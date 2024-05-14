@@ -1,0 +1,17 @@
+2024-05-14 19:19:49.2140|INFO|TodoApp.Api.Controllers.TodosController|Fetching todos list
+2024-05-14 19:22:41.3433|INFO|TodoApp.Api.Controllers.TodosController|Fetching todos list
+2024-05-14 19:22:41.5423|ERROR|TodoApp.Api.Controllers.TodosController|System.NotImplementedException: The method or operation is not implemented.
+   at TodoApp.Data.Repositories.TodoRepository.<GetTodosAsync>d__2.MoveNext() in C:\Users\RD\Documents\Projects\Dotnet\DotnetFrameworkProjects\TodoApp\TodoApp.Data\Repositories\TodoRepository.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at TodoApp.Api.Controllers.TodosController.<GetTodos>d__3.MoveNext() in C:\Users\RD\Documents\Projects\Dotnet\DotnetFrameworkProjects\TodoApp\TodoApp.Api\Controllers\TodosController.cs:line 25
+2024-05-14 19:22:41.6855|INFO|TodoApp.Api.Controllers.TodosController|Fetching todos list
+2024-05-14 19:22:41.8199|ERROR|TodoApp.Api.Controllers.TodosController|System.NotImplementedException: The method or operation is not implemented.
+   at TodoApp.Data.Repositories.TodoRepository.<GetTodosAsync>d__2.MoveNext() in C:\Users\RD\Documents\Projects\Dotnet\DotnetFrameworkProjects\TodoApp\TodoApp.Data\Repositories\TodoRepository.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at TodoApp.Api.Controllers.TodosController.<GetTodos>d__3.MoveNext() in C:\Users\RD\Documents\Projects\Dotnet\DotnetFrameworkProjects\TodoApp\TodoApp.Api\Controllers\TodosController.cs:line 25

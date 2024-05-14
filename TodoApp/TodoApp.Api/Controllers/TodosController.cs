@@ -10,7 +10,7 @@ namespace TodoApp.Api.Controllers
     public class TodosController : ApiController
     {
         private readonly ITodoRepository _todoRepository;
-
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public TodosController(ITodoRepository todoRepository)
         {
             _todoRepository = todoRepository;
@@ -21,10 +21,12 @@ namespace TodoApp.Api.Controllers
         {
             try
             {
+                Logger.Info("Fetching todos list");
                 return Ok(await _todoRepository.GetTodosAsync());
             }
             catch(Exception ex)
             {
+                Logger.Error(ex);
                 return InternalServerError(ex);
 
             }
@@ -45,7 +47,7 @@ namespace TodoApp.Api.Controllers
             }
             catch (Exception ex)
             {
-
+                Logger.Error(ex);
                 return InternalServerError(ex);
             }
         }
@@ -60,7 +62,7 @@ namespace TodoApp.Api.Controllers
             }
             catch (Exception ex)
             {
-
+                Logger.Error(ex);
                 return InternalServerError(ex);
             }
         }
@@ -84,6 +86,7 @@ namespace TodoApp.Api.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex);
                 return InternalServerError(ex);
             }
         }
@@ -103,6 +106,7 @@ namespace TodoApp.Api.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Error(ex);
                 return InternalServerError(ex);
             }
         }
