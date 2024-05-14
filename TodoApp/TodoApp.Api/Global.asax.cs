@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using TodoApp.Data.Models;
 using TodoApp.Data.Repositories;
 
 namespace TodoApp.Api
@@ -28,6 +29,7 @@ namespace TodoApp.Api
 
             // Register types
             builder.RegisterType<TodoRepository>().As<ITodoRepository>();
+            builder.RegisterType<ApplicationDbContext>().AsSelf().InstancePerRequest();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
