@@ -1,0 +1,68 @@
+﻿@using TodoApp.Data.Models;
+@model Todo
+@{
+    IEnumerable<Todo> todos = ViewBag.todos;
+}
+
+<style>
+    body{
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    .description {
+        width: 500px;
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 5px 10px;
+        text-decoration:none;
+    }
+
+    .lineThrough{
+        text-decoration:line-through;
+    }
+</style>
+<h2>Todo List</h2>
+
+@using (Html.BeginForm())
+{
+    <div style="display: flex; gap: 5px; align-items: center">
+        @*@Html.TextBoxFor(a=>a.Description)*@
+        <input type="text" class="description" name="Description" />
+        <button type="submit" class="button">Add</button>
+    </div>
+}
+
+@Html.ValidationSummary()
+@if (todos?.Count() > 0)
+{
+    <div>
+        @foreach (var todo in todos)
+        {
+            <div style="display:flex;gap:5px;align-items:center;margin-bottom:5px;font-size:20px">
+                <div>
+                    <input type="checkbox" checked="@todo.Completed" onclick="window.location.href='/todo/toggleItem?id=@todo.Id'" />
+                </div>
+
+                @if (todo.Completed)
+                {
+                    <div class="lineThrough">@todo.Description</div>
+                }
+                else
+                {
+                    <div>@todo.Description</div>
+                }
+                <div>
+                    <a href="/todo/deleteItem?id=@todo.Id" class="button">❌</a>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h3>No items found</h3>
+}
+
